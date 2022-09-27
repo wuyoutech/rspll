@@ -31,6 +31,7 @@ void led_blinking_task(void) {
 
     led_set(led_state);
     led_state = led_state ? false : true;
+    start_ms += blink_interval_ms;
 }
 
 void led_blinking_timeset(uint32_t time) { blink_interval_ms = time; }
