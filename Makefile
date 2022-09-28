@@ -29,7 +29,7 @@ c_sources += $(wildcard src/lwip/src/core/ipv6/*.c)
 c_sources += src/lwip/src/netif/ethernet.c
 c_sources += src/lwip/src/netif/slipif.c
 c_sources += src/lwip/src/apps/http/httpd.c
-c_sources += src/lwip/src/apps/http/fs.c
+# c_sources += src/lwip/src/apps/http/fs.c
 
 
 # defines
