@@ -34,7 +34,7 @@ build_flags += -MMD -MP -MF"$(@:%.o=%.d)"
 # libraries
 libs = -lc -lm -lnosys
 libdir =
-ld_flags = $(mcu) -specs=nano.specs -T$(ld_scripts) $(libdir) $(libs) -Wl,-Map=$(build_dir)/$(target).map,--cref -Wl,--gc-sections
+ld_flags = $(mcu) -specs=nano.specs -T$(ld_scripts) $(libdir) $(libs) -Wl,-Map=$(build_dir)/$(target).map,--cref -Wl,--gc-sections -Wl,--print-memory-usage
 
 # list of objects 
 objects += $(patsubst $(src_dir)/%.c,$(build_dir)/%.o,$(c_sources))
@@ -64,7 +64,6 @@ $(objdirs):
 $(target).elf: $(objects) 
 	$(info linking $@)
 	@$(cc) $(objects) $(ld_flags) -o $@
-	@$(sz) $@
 $(build_dir)/%.o: $(src_dir)/%.s | $(objdirs)
 	@$(as) -c $(build_flags) $< -o $@
 	$(info compiling $<)
