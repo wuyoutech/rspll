@@ -93,8 +93,8 @@ extern "C" {
 
 //------------- CLASS -------------//
 // Which classes are compiled and available
-#define CFG_TUD_CDC 1
-#define CFG_TUD_MSC 0
+#define CFG_TUD_CDC 0
+#define CFG_TUD_MSC 1
 #define CFG_TUD_MIDI 0
 #define CFG_TUD_HID 0
 #define CFG_TUD_VENDOR 0
@@ -102,7 +102,7 @@ extern "C" {
 #define CFG_TUD_DFU_RT 0
 
 // network config
-#define CFG_TUD_ECM_RNDIS 1
+#define CFG_TUD_ECM_RNDIS 0
 
 // CDC FIFO size of TX and RX
 #define CFG_TUD_CDC_RX_BUFSIZE (TUD_OPT_HIGH_SPEED ? 512 : 64)
